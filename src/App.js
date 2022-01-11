@@ -2,10 +2,10 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Preferences from "./components/Preferences/Preferences";
 import Login from './components/Login/Login'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useState } from 'react';
+import useToken from "./components/useToken";
 
 function App() {
-    const [token, setToken] = useState();
+    const {token, setToken} = useToken();
 
     if (!token) {
         return <Login setToken={setToken} />
